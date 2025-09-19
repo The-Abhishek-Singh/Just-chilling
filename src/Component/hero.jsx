@@ -3,7 +3,7 @@ import { Twitter, Instagram, Linkedin, Link2 } from 'lucide-react';
 
 const MotionNotionHero = () => {
   return (
-    <div className="min-h-screen bg-[#EEF2FC] p-6 lg:pt-12 ">
+    <div className="min-h-screen max-h-screen bg-[#EEF2FC] p-6  ">
       {/* Navigation Breadcrumb */}
       <div className="max-w-6xl mx-auto mb-8">
         <div className="flex items-center text-sm text-gray-600 mb-8">

@@ -25,7 +25,7 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close mobile menu when window is resized to desktop (changed to 768px)
+  // Close mobile menu when window is resized to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -64,10 +64,12 @@ const Navbar = () => {
           {/* Logo - Always visible */}
           <div className="flex items-center flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">D</span>
-              </div>
-              <span className="text-lg sm:text-xl font-semibold text-gray-900">DealYouNeed</span>
+              <img 
+                src="/Logo.png" 
+                alt="DealYouNeed Logo" 
+                className="w-32 h-32 rounded object-contain"
+              />
+
             </Link>
           </div>
 
@@ -197,8 +199,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Auth Buttons - Show from sm (640px) up, but adjust layout */}
-          <div className="hidden sm:flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
+          {/* Auth Buttons - Show from md (768px) up to align with desktop nav */}
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
             <Link 
               href="/login" 
               className="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
@@ -209,13 +211,29 @@ const Navbar = () => {
               href="/signup" 
               className="bg-blue-500 hover:bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
             >
-              <span className="hidden md:inline">Join For Free</span>
-              <span className="md:hidden">Join</span>
+              <span className="hidden lg:inline">Join For Free</span>
+              <span className="lg:hidden">Join</span>
             </Link>
           </div>
 
           {/* Mobile menu button - Only visible on small screens (below md: 768px) */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
+            {/* Show auth buttons on sm screens (640px-768px) where desktop nav is hidden */}
+            <div className="hidden sm:flex items-center space-x-2 mr-4">
+              <Link 
+                href="/login" 
+                className="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+              >
+                Login
+              </Link>
+              <Link 
+                href="/signup" 
+                className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
+              >
+                Join
+              </Link>
+            </div>
+            
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-gray-700 hover:text-blue-600 focus:outline-none p-2 rounded-md hover:bg-gray-100"
@@ -359,7 +377,7 @@ const Navbar = () => {
                 Pricing
               </Link>
 
-              {/* Mobile Auth Buttons - Only show if not visible in header */}
+              {/* Mobile Auth Buttons - Only show on xs screens (below 640px) */}
               <div className="sm:hidden pt-4 pb-2 space-y-3 border-t border-gray-200 mt-4">
                 <Link 
                   href="/login" 
