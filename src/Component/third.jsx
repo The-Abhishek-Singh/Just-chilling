@@ -76,7 +76,7 @@ const MotionNotionDifferences = () => {
             </section>
 
             {/* Comparison Summary Section */}
-            <section>
+            <section className="border border-1 p-10 rounded-2xl" >
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Comparison Summary</h2>
               
               <div className="space-y-6 text-gray-700 leading-relaxed mb-12">
