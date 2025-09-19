@@ -169,7 +169,7 @@ const MotionNotionBody = () => {
           {/* Right Sidebar */}
           <div className="space-y-6">
             {/* Get ClickFunnels 2.0 Card */}
-            <div className="bg-blue-900 text-white rounded-xl p-6">
+            <div className="bg-gradient-to-bl from-[#111827] via-[#182C6B] to-[#111827] text-white rounded-xl p-6">
               <h3 className="font-bold mb-4">Get ClickFunnels 2.0 Today!</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-3">
