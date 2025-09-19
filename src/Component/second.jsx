@@ -136,9 +136,11 @@ const MotionNotionBody = () => {
               {/* Get Your Content Output Section */}
               <div className="border-t-2 border-dashed border-gray-200 pt-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-white border-2 border-gray-200 rounded flex items-center justify-center">
-                    <span className="text-sm font-bold text-gray-800">N</span>
-                  </div>
+                  <img 
+                    src="/Boost Content.png" 
+                    alt="Notion Logo" 
+                    className="w-8 h-8 rounded object-contain"
+                  />
                   <div>
                     <h4 className="font-semibold text-gray-900">Get Your Content Output by 10x</h4>
                     <p className="text-sm text-gray-600">Notion Inc.</p>
