@@ -4,19 +4,16 @@ import { Twitter, Instagram, Linkedin, Link2 } from 'lucide-react';
 const MotionNotionHero = () => {
   return (
     <div className="min-h-screen bg-[#EEF2FC] flex flex-col">
-      {/* Navigation Breadcrumb */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="max-w-7xl mx-auto">
+      {/* Main Hero Content */}
+      <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        {/* Navigation Breadcrumb - moved inside main content */}
+        <div className="max-w-7xl mx-auto w-full mb-8 lg:mb-12">
           <div className="flex items-center text-sm text-gray-600">
             <span className="hover:text-blue-600 cursor-pointer transition-colors">All Blogs</span>
             <span className="mx-2 text-gray-400">›</span>
             <span className="text-blue-600 font-medium">Motion vs Notion Comparison</span>
           </div>
         </div>
-      </div>
-
-      {/* Main Hero Content */}
-      <div className="flex-1 flex items-center px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
