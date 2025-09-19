@@ -11,7 +11,7 @@ const MotionNotionFinal = () => {
           <div className="lg:col-span-2">
             
             {/* Feature Differentiation Section */}
-            <section className="mb-20">
+            <section className="mb-20 border border-1 p-10 rounded-2xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Feature Differentiation</h2>
               
               <div className="space-y-6 text-gray-700 leading-relaxed mb-12">
@@ -57,7 +57,7 @@ const MotionNotionFinal = () => {
             </section>
 
             {/* Final Thought Section */}
-            <section>
+            <section className="border border-1 p-10 rounded-2xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Final Thought</h2>
               
               <div className="space-y-6 text-gray-700 leading-relaxed mb-12">
