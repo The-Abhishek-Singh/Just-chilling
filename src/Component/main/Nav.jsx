@@ -25,10 +25,10 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close mobile menu when window is resized to desktop
+  // Close mobile menu when window is resized to desktop (changed to 768px)
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 768) {
         setIsMobileMenuOpen(false);
         setIsMobileSaasOpen(false);
         setIsMobileMoreOpen(false);
@@ -71,11 +71,11 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Only visible on large screens */}
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+          {/* Desktop Navigation - Visible from md (768px) and up */}
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2 xl:space-x-4">
             <Link 
               href="/" 
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
             >
               Home
             </Link>
@@ -84,9 +84,10 @@ const Navbar = () => {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => handleDropdownToggle('saas')}
-                className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+                className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
               >
-                <span>SaaS Marketplace</span>
+                <span className="hidden lg:inline">SaaS Marketplace</span>
+                <span className="lg:hidden">SaaS</span>
                 <ChevronDown 
                   className={`w-4 h-4 transition-transform ${
                     activeDropdown === 'saas' ? 'rotate-180' : ''
@@ -132,16 +133,17 @@ const Navbar = () => {
 
             <Link 
               href="/swap-marketplace" 
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
             >
-              Swap Marketplace
+              <span className="hidden lg:inline">Swap Marketplace</span>
+              <span className="lg:hidden">Swap</span>
             </Link>
 
             {/* More Dropdown */}
             <div className="relative">
               <button
                 onClick={() => handleDropdownToggle('more')}
-                className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+                className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
               >
                 <span>More</span>
                 <ChevronDown 
@@ -189,30 +191,31 @@ const Navbar = () => {
 
             <Link 
               href="/pricing" 
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
             >
               Pricing
             </Link>
           </div>
 
-          {/* Auth Buttons - Visible on desktop only */}
-          <div className="hidden lg:flex items-center space-x-3 flex-shrink-0">
+          {/* Auth Buttons - Show from sm (640px) up, but adjust layout */}
+          <div className="hidden sm:flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
             <Link 
               href="/login" 
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap"
             >
               Login
             </Link>
             <Link 
               href="/signup" 
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
             >
-              Join For Free
+              <span className="hidden md:inline">Join For Free</span>
+              <span className="md:hidden">Join</span>
             </Link>
           </div>
 
-          {/* Mobile/Tablet menu button - Visible below lg breakpoint */}
-          <div className="lg:hidden">
+          {/* Mobile menu button - Only visible on small screens (below md: 768px) */}
+          <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-gray-700 hover:text-blue-600 focus:outline-none p-2 rounded-md hover:bg-gray-100"
@@ -227,9 +230,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile/Tablet Menu - Shows for all screens below lg */}
+        {/* Mobile Menu - Only shows on screens below md (768px) */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200 bg-white">
+          <div className="md:hidden border-t border-gray-200 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {/* Home */}
               <Link 
@@ -356,8 +359,8 @@ const Navbar = () => {
                 Pricing
               </Link>
 
-              {/* Mobile/Tablet Auth Buttons */}
-              <div className="pt-4 pb-2 space-y-3 border-t border-gray-200 mt-4">
+              {/* Mobile Auth Buttons - Only show if not visible in header */}
+              <div className="sm:hidden pt-4 pb-2 space-y-3 border-t border-gray-200 mt-4">
                 <Link 
                   href="/login" 
                   className="block w-full text-center px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md border border-gray-300 transition-colors"
