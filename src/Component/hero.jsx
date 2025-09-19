@@ -3,7 +3,7 @@ import { Twitter, Instagram, Linkedin, Link2 } from 'lucide-react';
 
 const MotionNotionHero = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-[#EEF2FC] p-6 lg:pt-12 ">
       {/* Navigation Breadcrumb */}
       <div className="max-w-6xl mx-auto mb-8">
         <div className="flex items-center text-sm text-gray-600 mb-8">
@@ -64,60 +64,14 @@ const MotionNotionHero = () => {
         
         {/* Right Visual */}
         <div className="relative">
-          {/* Main Blue Container */}
-          <div className="relative bg-blue-600 rounded-2xl p-8 h-80 overflow-hidden">
-            {/* Wavy Pattern Background */}
-            <div className="absolute inset-0">
-              <svg
-                viewBox="0 0 400 300"
-                className="w-full h-full opacity-30"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,150 Q50,100 100,120 T200,140 T300,120 T400,140 L400,300 L0,300 Z"
-                  fill="white"
-                  opacity="0.1"
-                />
-                <path
-                  d="M0,180 Q60,130 120,150 T240,170 T360,150 T480,170 L480,300 L0,300 Z"
-                  fill="white"
-                  opacity="0.1"
-                />
-                <path
-                  d="M0,210 Q70,160 140,180 T280,200 T420,180 T560,200 L560,300 L0,300 Z"
-                  fill="white"
-                  opacity="0.15"
-                />
-              </svg>
-            </div>
-            
-            {/* Motion Logo (Lines) */}
-            <div className="absolute top-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <div className="flex flex-col gap-1">
-                <div className="w-6 h-1 bg-blue-600 rounded"></div>
-                <div className="w-4 h-1 bg-blue-600 rounded"></div>
-                <div className="w-5 h-1 bg-blue-600 rounded"></div>
-              </div>
-            </div>
-            
-            {/* Notion Logo (N) */}
-            <div className="absolute bottom-6 right-6 w-12 h-12 bg-white rounded-lg flex items-center justify-center border-2 border-gray-200">
-              <span className="text-xl font-bold text-gray-800">N</span>
-            </div>
-            
-         
+          {/* Hero Image */}
+          <img 
+            src="/hero.png" 
+            alt="Motion vs Notion Comparison" 
+            className="w-full h-80 rounded-2xl object-cover"
+          />
           
-          </div>
-          
-          {/* Bottom Stats */}
-          <div className="absolute -bottom-4 -right-4 flex gap-2">
-            <div className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
-              628
-            </div>
-            <div className="bg-blue-400 text-white px-4 py-2 rounded-lg font-bold text-sm">
-              428
-            </div>
-          </div>
+        
           
       
         </div>

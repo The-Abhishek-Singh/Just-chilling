@@ -3,7 +3,7 @@ import { Star, Check, Users, Calendar, BarChart3, Shield, Headphones, Zap } from
 
 const MotionNotionBody = () => {
   return (
-    <div className="bg-gray-50 py-12">
+    <div className="bg-gray-50 py-12 pt-0">
       <div className="max-w-6xl mx-auto px-6">
         {/* Top Stats Section */}
         <div className="mb-12">
