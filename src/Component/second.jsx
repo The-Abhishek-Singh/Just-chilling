@@ -121,41 +121,12 @@ const MotionNotionBody = () => {
                   The AI workspace that works for you.
                 </h3>
                 
-                {/* Placeholder for Motion Interface */}
-                <div className="bg-white rounded-lg border p-6 mb-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                        <div className="flex flex-col gap-0.5">
-                          <div className="w-3 h-0.5 bg-white rounded"></div>
-                          <div className="w-2 h-0.5 bg-white rounded"></div>
-                          <div className="w-2.5 h-0.5 bg-white rounded"></div>
-                        </div>
-                      </div>
-                      <span className="font-semibold">Motion</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <Users size={20} className="text-gray-400" />
-                      <Calendar size={20} className="text-gray-400" />
-                      <BarChart3 size={20} className="text-gray-400" />
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 mb-4">
-                    <div className="text-center">
-                      <Calendar size={24} className="mx-auto mb-2 text-gray-400" />
-                      <p className="text-sm text-gray-600">Perfect notes every ideas</p>
-                    </div>
-                    <div className="text-center">
-                      <Users size={24} className="mx-auto mb-2 text-gray-400" />
-                      <p className="text-sm text-gray-600">One space for everything</p>
-                    </div>
-                    <div className="text-center">
-                      <BarChart3 size={24} className="mx-auto mb-2 text-gray-400" />
-                      <p className="text-sm text-gray-600">Analytics</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Motion Interface Image */}
+                <img 
+                  src="/workplace.png" 
+                  alt="Motion AI Workspace Interface" 
+                  className="w-full h-auto rounded-lg border mb-4"
+                />
 
                 <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
                   Get Started Now
